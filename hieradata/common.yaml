@@ -1,0 +1,13 @@
+---
+# Override hiera lookup/merge behaviour for given keys
+# See https://puppet.com/docs/puppet/5.0/hiera_merging.html for info
+lookup_options:
+  # Allow sensu::client_custom to inherit from every hiera file
+  sensu::client_custom:
+    merge: deep
+  base::group_configs:
+    merge: deep
+  base::user_configs:
+    merge: deep
+  base::ssh_key_configs:
+    merge: deep
